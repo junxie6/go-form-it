@@ -33,6 +33,14 @@ func (f *Form) Render() template.HTML {
 	return template.HTML(buf.String())
 }
 
+func (f *Form) RenderStart() template.HTML {
+	return f.Render()
+}
+
+func (f *Form) RenderEnd() template.HTML {
+	return "</form>"
+}
+
 // Elements adds the provided elements to the form.
 func (f *Form) Elements(elems ...FormElement) *Form {
 	for _, e := range elems {

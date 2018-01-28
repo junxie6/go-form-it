@@ -54,6 +54,27 @@ func BaseForm(method, action string) *Form {
 	}
 }
 
+// EmptyForm creates an empty form with no styling.
+func EmptyForm(method, action string) *Form {
+	tmpl, err := template.ParseFiles(formcommon.CreateUrl("templates/emptyform.html"))
+	if err != nil {
+		panic(err)
+	}
+	return &Form{
+		make([]FormElement, 0),
+		make(map[string]int),
+		make(map[string]string),
+		formcommon.BASE,
+		tmpl,
+		[]string{},
+		"",
+		map[string]string{},
+		map[string]string{},
+		method,
+		template.HTML(action),
+	}
+}
+
 // BootstrapForm creates an empty form compliant with Bootstrap3 CSS, both in structure and classes.
 func BootstrapForm(method, action string) *Form {
 	tmpl, err := template.ParseFiles(formcommon.CreateUrl("templates/baseform.html"))
