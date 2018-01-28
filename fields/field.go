@@ -2,8 +2,8 @@
 package fields
 
 import (
-	"github.com/kirves/go-form-it/common"
-	"github.com/kirves/go-form-it/widgets"
+	"github.com/junxie6/go-form-it/common"
+	"github.com/junxie6/go-form-it/widgets"
 	"html/template"
 	"strings"
 )
